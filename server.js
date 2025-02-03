@@ -25,6 +25,11 @@ function decryptMessage(encryptedMessage, key) {
     return decipher.update(encryptedMessage, 'hex', 'utf8') + decipher.final('utf8');
 }
 
+// Add route for root path
+app.get('/', (req, res) => {
+    res.send('Welcome to Bangla Secure Chat Backend!');
+});
+
 io.on('connection', (socket) => {
     console.log('User connected:', socket.id);
     
